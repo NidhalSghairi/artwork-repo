@@ -9,6 +9,7 @@ import ArtWorkMainImage from "./components/ArtWorkMainImage/ArtWorkMainImage.com
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import ShoppingSection from "./components/ShoppingSection/ShoppingSection";
 
 function App() {
   const { artworkId } = useParams();
@@ -75,8 +76,8 @@ function App() {
 
   return (
     <Wrapper container rowSpacing={2}>
-      <Grid xs={12} item container>
-        <Grid xs={6} item container rowSpacing={2}>
+      <Grid xs={12} item container columnSpacing={4}>
+        <Grid xs={8} item container rowSpacing={2}>
           <ArtWorkMainImage imageUrl={data.imageUrl} />
           <Grid item xs={12}>
             <Accordion
@@ -91,7 +92,9 @@ function App() {
             />
           </Grid>
         </Grid>
-        <Grid xs={6} item container></Grid>
+        <Grid xs={4} item container>
+          <ShoppingSection data={data} />
+        </Grid>
       </Grid>
       <Grid xs={12} item container>
         Caroussel component
