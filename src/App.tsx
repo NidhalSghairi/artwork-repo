@@ -10,6 +10,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ShoppingSection from "./components/ShoppingSection/ShoppingSection";
+import ReactSlickDemo from "./components/Carousel/Carousel.component";
 
 function App() {
   const { artworkId } = useParams();
@@ -97,7 +98,7 @@ function App() {
         </Grid>
       </Grid>
       <Grid xs={12} item container>
-        Caroussel component
+        <ReactSlickDemo images={data.otherArtworkImages} />
       </Grid>
     </Wrapper>
   );
