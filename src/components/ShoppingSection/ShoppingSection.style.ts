@@ -40,6 +40,7 @@ export const StyledAcquireButton = styled.button`
   border-radius: 100px;
   font-size: 18px;
   width: 100%;
+  cursor: pointer;
 `;
 
 export const StyledMakeAnOfferButton = styled(StyledAcquireButton)`
@@ -64,7 +65,6 @@ export const StyledInput = styled.input``;
 
 export const InputsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
   margin-top: 8px;
 `;
 

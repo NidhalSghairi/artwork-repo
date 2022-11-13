@@ -1,8 +1,8 @@
 import React from "react";
-import MuiAccordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
+import { StyledMuiAccordion } from "./Accordion.style";
 
 type Props = {
   title: string;
@@ -11,12 +11,12 @@ type Props = {
 
 const Accordion: React.FC<Props> = ({ title, description }: Props) => {
   return (
-    <MuiAccordion>
+    <StyledMuiAccordion>
       <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
         <Typography>{title}</Typography>
       </AccordionSummary>
       <AccordionDetails>{description}</AccordionDetails>
-    </MuiAccordion>
+    </StyledMuiAccordion>
   );
 };
 

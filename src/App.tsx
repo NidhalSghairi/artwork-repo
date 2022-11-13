@@ -82,7 +82,7 @@ function App() {
           <ArtWorkMainImage imageUrl={data.imageUrl} />
           <Grid item xs={12}>
             <Accordion
-              title="Description"
+              title="DESCRIPTION"
               description={<Typography>{data.description}</Typography>}
             />
           </Grid>

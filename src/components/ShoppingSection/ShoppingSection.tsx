@@ -60,7 +60,8 @@ const ShoppingSection: React.FC<Props> = ({ data }) => {
           type="text"
           name="country"
           placeholder="Spain"
-        ></StyledInput>
+          style={{ marginRight: "8px" }}
+        />
         <StyledInput
           type="text"
           name="zipCode"

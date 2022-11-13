@@ -35,7 +35,13 @@ const Carousel: React.FC<Props> = ({ images }: Props) => {
   }
 
   return (
-    <Grid container display="flex" alignItems="center" sx={{ mt: "20px" }}>
+    <Grid
+      container
+      display="flex"
+      alignItems="center"
+      sx={{ mt: "20px" }}
+      style={{ maxWidth: "1270px" }}
+    >
       <Grid item xs={1}>
         {activeStep > 0 && (
           <ChevronContainer>
@@ -55,12 +61,7 @@ const Carousel: React.FC<Props> = ({ images }: Props) => {
               {Math.abs(activeStep - index) <= 2
                 ? imageSet.map((url) => {
                     return (
-                      <Grid
-                        item
-                        key={url}
-                        alignItems="center"
-                        style={{ maxWidth: "30%" }}
-                      >
+                      <Grid item key={url} alignItems="center">
                         <img src={url} alt="" width="180px" height="180px" />
                       </Grid>
                     );
