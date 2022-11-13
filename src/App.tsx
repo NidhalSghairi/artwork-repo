@@ -1,5 +1,4 @@
 import { Grid, Typography } from "@mui/material";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { LoaderWrapper, Wrapper } from "./App.style";
@@ -12,17 +11,14 @@ import ListItemText from "@mui/material/ListItemText";
 import ShoppingSection from "./components/ShoppingSection/ShoppingSection";
 import ReactSlickDemo from "./components/Carousel/Carousel.component";
 import CircularProgress from "@mui/material/CircularProgress";
+import { getArtWorkData } from "./network/artWork";
 
 function App() {
   const { artworkId } = useParams();
   const [data, setData] = useState<ArtworkDataType | null>(null);
 
   useEffect(() => {
-    axios
-      .get(
-        `https://storage.googleapis.com/ya-misc/interviews/front/examples/${artworkId}.json`
-      )
-      .then((response) => setData(response.data));
+    artworkId && getArtWorkData(artworkId).then((data) => setData(data));
   }, [artworkId]);
 
   if (!data) {
