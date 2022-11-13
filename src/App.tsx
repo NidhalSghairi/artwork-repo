@@ -2,7 +2,7 @@ import { Grid, Typography } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Wrapper } from "./App.style";
+import { LoaderWrapper, Wrapper } from "./App.style";
 import { ArtworkDataType } from "./App.types";
 import Accordion from "./components/Accordion/Accordion.component";
 import ArtWorkMainImage from "./components/ArtWorkMainImage/ArtWorkMainImage.component";
@@ -11,6 +11,7 @@ import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
 import ShoppingSection from "./components/ShoppingSection/ShoppingSection";
 import ReactSlickDemo from "./components/Carousel/Carousel.component";
+import CircularProgress from "@mui/material/CircularProgress";
 
 function App() {
   const { artworkId } = useParams();
@@ -25,7 +26,11 @@ function App() {
   }, [artworkId]);
 
   if (!data) {
-    return <h1>Loader</h1>;
+    return (
+      <LoaderWrapper>
+        <CircularProgress />
+      </LoaderWrapper>
+    );
   }
 
   const getSecondAccordionDetails = () => {
